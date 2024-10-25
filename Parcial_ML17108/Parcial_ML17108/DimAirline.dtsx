@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="ROXANA"
   DTS:CreatorName="ROXANA\LENOVO"
-  DTS:DTSID="{71E94B8F-6755-46AA-939E-B5BC78256DDE}"
+  DTS:DTSID="{4416C5B1-5570-4079-91A1-73EB10260CAE}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5556.0"
   DTS:LocaleID="3082"
-  DTS:ObjectName="CSV_A_AirlineTable"
+  DTS:ObjectName="DimAirline"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{F166D774-A774-47DA-B4B8-BE0D0E0B858A}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{73F58637-E7FF-433C-A135-8257FD80BC19}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -66,7 +66,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAN3JHNGq9bkqGlxs4AwYO/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD9C8iFfTqa6RY1LVNtrGH+HpfTFYyjCUjl50tGBiy0fAAAAAAOgAAAAAIAACAAAACwEAAqiIzYeclcKbD9HZvPuSbwbowjifM0qokWBxA36iAAAACau+Ls7PY7is48Q71CEIGip8SeYDfveoKVxH8mhkn1P0AAAAC/KHEHlnN5LBYUOw7jcrRAJaNXi3IhXjpnDlsd2ws99q2WASuZqffZhpWT6E75LakJVQdAtloj6781C7lv5X7J</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAN3JHNGq9bkqGlxs4AwYO/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAApZyC+Bi/32/QvXzg+ZMu6pcHOJHkgM7SW3tpN9raRwwAAAAAOgAAAAAIAACAAAAAD/ce5WWk6wrmYIoQomFVo5NKtK5vqyeUXiTik+QZs/SAAAAAJbXuwAhA4vfCt8OJDCG8TpJjjGE5GuhV9/PO5B9y37EAAAAAh3tpnPf/wUTR9sJBBjwqeHz0eMYRC69zKb++2e/5DYnzF2o+nFnS3YMJezM9fOtaXRzvzr6WUXmdOdi4Awy1l</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -74,13 +74,13 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
+      DTS:refId="Package\Llenado DimAirline"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{FE897049-5EAE-4F6F-9F14-669911DEC4A7}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task"
+      DTS:ObjectName="Llenado DimAirline"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -88,7 +88,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\CSV Airline"
+              refId="Package\Llenado DimAirline\CSV Airline"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
@@ -108,25 +108,25 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\CSV Airline.Connections[FlatFileConnection]"
+                  refId="Package\Llenado DimAirline\CSV Airline.Connections[FlatFileConnection]"
                   connectionManagerID="Package.ConnectionManagers[CSV Airline]"
                   connectionManagerRefId="Package.ConnectionManagers[CSV Airline]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\CSV Airline.Outputs[Flat File Source Output]"
+                  refId="Package\Llenado DimAirline\CSV Airline.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\CSV Airline.Outputs[Flat File Source Output].Columns[Code]"
+                      refId="Package\Llenado DimAirline\CSV Airline.Outputs[Flat File Source Output].Columns[Code]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\CSV Airline.Outputs[Flat File Source Output].ExternalColumns[Code]"
+                      externalMetadataColumnId="Package\Llenado DimAirline\CSV Airline.Outputs[Flat File Source Output].ExternalColumns[Code]"
                       length="20"
-                      lineageId="Package\Data Flow Task\CSV Airline.Outputs[Flat File Source Output].Columns[Code]"
+                      lineageId="Package\Llenado DimAirline\CSV Airline.Outputs[Flat File Source Output].Columns[Code]"
                       name="Code"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -141,14 +141,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\CSV Airline.Outputs[Flat File Source Output].Columns[Description]"
+                      refId="Package\Llenado DimAirline\CSV Airline.Outputs[Flat File Source Output].Columns[Description]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\CSV Airline.Outputs[Flat File Source Output].ExternalColumns[Description]"
+                      externalMetadataColumnId="Package\Llenado DimAirline\CSV Airline.Outputs[Flat File Source Output].ExternalColumns[Description]"
                       length="255"
-                      lineageId="Package\Data Flow Task\CSV Airline.Outputs[Flat File Source Output].Columns[Description]"
+                      lineageId="Package\Llenado DimAirline\CSV Airline.Outputs[Flat File Source Output].Columns[Description]"
                       name="Description"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -166,13 +166,13 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\CSV Airline.Outputs[Flat File Source Output].ExternalColumns[Code]"
+                      refId="Package\Llenado DimAirline\CSV Airline.Outputs[Flat File Source Output].ExternalColumns[Code]"
                       codePage="1252"
                       dataType="str"
                       length="20"
                       name="Code" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\CSV Airline.Outputs[Flat File Source Output].ExternalColumns[Description]"
+                      refId="Package\Llenado DimAirline\CSV Airline.Outputs[Flat File Source Output].ExternalColumns[Description]"
                       codePage="1252"
                       dataType="str"
                       length="255"
@@ -180,27 +180,27 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\CSV Airline.Outputs[Flat File Source Error Output]"
+                  refId="Package\Llenado DimAirline\CSV Airline.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\CSV Airline.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Llenado DimAirline\CSV Airline.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Data Flow Task\CSV Airline.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Llenado DimAirline\CSV Airline.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Data Flow Task\CSV Airline.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Llenado DimAirline\CSV Airline.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\CSV Airline.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Llenado DimAirline\CSV Airline.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\CSV Airline.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Llenado DimAirline\CSV Airline.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\CSV Airline.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Llenado DimAirline\CSV Airline.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -209,11 +209,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Destino de ADO NET"
+              refId="Package\Llenado DimAirline\Llenado DimAirline"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
               description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
-              name="Destino de ADO NET"
+              name="Llenado DimAirline"
               usesDispositions="true"
               version="2">
               <properties>
@@ -244,7 +244,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Destino de ADO NET.Connections[IDbConnection]"
+                  refId="Package\Llenado DimAirline\Llenado DimAirline.Connections[IDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[FlightDW]"
                   connectionManagerRefId="Package.ConnectionManagers[FlightDW]"
                   description="Administrador de conexiones administrado"
@@ -252,46 +252,46 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+                  refId="Package\Llenado DimAirline\Llenado DimAirline.Inputs[Entrada de destino de ADO NET]"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Entrada de destino de ADO NET">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Code]"
+                      refId="Package\Llenado DimAirline\Llenado DimAirline.Inputs[Entrada de destino de ADO NET].Columns[Code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="Code"
-                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[AirportCode]"
-                      lineageId="Package\Data Flow Task\CSV Airline.Outputs[Flat File Source Output].Columns[Code]" />
+                      externalMetadataColumnId="Package\Llenado DimAirline\Llenado DimAirline.Inputs[Entrada de destino de ADO NET].ExternalColumns[AirportCode]"
+                      lineageId="Package\Llenado DimAirline\CSV Airline.Outputs[Flat File Source Output].Columns[Code]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Description]"
+                      refId="Package\Llenado DimAirline\Llenado DimAirline.Inputs[Entrada de destino de ADO NET].Columns[Description]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="Description"
-                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[AirportName]"
-                      lineageId="Package\Data Flow Task\CSV Airline.Outputs[Flat File Source Output].Columns[Description]" />
+                      externalMetadataColumnId="Package\Llenado DimAirline\Llenado DimAirline.Inputs[Entrada de destino de ADO NET].ExternalColumns[AirportName]"
+                      lineageId="Package\Llenado DimAirline\CSV Airline.Outputs[Flat File Source Output].Columns[Description]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[AirportKey]"
+                      refId="Package\Llenado DimAirline\Llenado DimAirline.Inputs[Entrada de destino de ADO NET].ExternalColumns[AirportKey]"
                       dataType="i4"
                       name="AirportKey" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[AirportCode]"
+                      refId="Package\Llenado DimAirline\Llenado DimAirline.Inputs[Entrada de destino de ADO NET].ExternalColumns[AirportCode]"
                       dataType="wstr"
                       length="20"
                       name="AirportCode" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[AirportName]"
+                      refId="Package\Llenado DimAirline\Llenado DimAirline.Inputs[Entrada de destino de ADO NET].ExternalColumns[AirportName]"
                       dataType="wstr"
                       length="255"
                       name="AirportName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[LastUpdatedDate]"
+                      refId="Package\Llenado DimAirline\Llenado DimAirline.Inputs[Entrada de destino de ADO NET].ExternalColumns[LastUpdatedDate]"
                       dataType="dbTimeStamp"
                       name="LastUpdatedDate" />
                   </externalMetadataColumns>
@@ -299,22 +299,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET]"
+                  refId="Package\Llenado DimAirline\Llenado DimAirline.Outputs[Salida de error de destino de ADO NET]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Salida de error de destino de ADO NET"
-                  synchronousInputId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]">
+                  synchronousInputId="Package\Llenado DimAirline\Llenado DimAirline.Inputs[Entrada de destino de ADO NET]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      refId="Package\Llenado DimAirline\Llenado DimAirline.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      lineageId="Package\Llenado DimAirline\Llenado DimAirline.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      refId="Package\Llenado DimAirline\Llenado DimAirline.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      lineageId="Package\Llenado DimAirline\Llenado DimAirline.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -325,15 +325,42 @@
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[Flat File Source Output]"
-              endId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+              refId="Package\Llenado DimAirline.Paths[Flat File Source Output]"
+              endId="Package\Llenado DimAirline\Llenado DimAirline.Inputs[Entrada de destino de ADO NET]"
               name="Flat File Source Output"
-              startId="Package\Data Flow Task\CSV Airline.Outputs[Flat File Source Output]" />
+              startId="Package\Llenado DimAirline\CSV Airline.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Ejecutar SQL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{7625B844-4042-48AA-8A58-6CDFFF2C3DEE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Ejecutar SQL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D10EAACE-29F4-4FC5-846D-37E9E513B461}"
+          SQLTask:SqlStatementSource="--Limpiamos la dimension&#xA;&#xA;delete DimAirline;&#xA;&#xA;--Reiniciamos la clave autonumerica&#xA;dbcc checkident('DimAirline',RESEED,0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{94BCE901-13B7-44DF-85DE-C28D8137CF69}"
+      DTS:From="Package\Tarea Ejecutar SQL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Llenado DimAirline" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
 <!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
@@ -345,53 +372,91 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="153.333333333334,42.6666666666667"
-          Id="Package\Data Flow Task"
-          TopLeft="112.499994970858,72.5263149931491" />
-      </GraphLayout>
-    </LayoutInfo>
-  </Package>
-  <TaskHost
-    design-time-name="Package\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="134,42.6666666666667"
-          Id="Package\Data Flow Task\CSV Airline"
-          TopLeft="59.9999973177911,0.684210518803297" />
+          Size="169.333333333334,42.6666666666667"
+          Id="Package\Llenado DimAirline"
+          TopLeft="153.749993126839,111.526314564937" />
         <NodeLayout
-          Size="181.333333333334,42.6666666666667"
-          Id="Package\Data Flow Task\Destino de ADO NET"
-          TopLeft="126.874994328246,88.2631569256248" />
+          Size="173.333333333334,42.6666666666667"
+          Id="Package\Tarea Ejecutar SQL"
+          TopLeft="119.374994663522,29.4210523085416" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="126.999997317791,43.35087718547">
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="206.041661330189,72.0877189752083">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="90.5416636771213,44.9122797401549"
+              EndConnector="32.374998463317,39.4385955897287"
               Start="0,0"
-              End="90.5416636771213,37.4122797401549">
+              End="32.374998463317,31.9385955897287">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.4561398700774" />
+                    End="0,15.7192977948644" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.4561398700774"
-                    Point2="0,22.4561398700774"
-                    Point3="4,22.4561398700774" />
+                    Point1="0,15.7192977948644"
+                    Point2="0,19.7192977948644"
+                    Point3="4,19.7192977948644" />
                   <mssgle:LineSegment
-                    End="86.5416636771213,22.4561398700774" />
+                    End="28.374998463317,19.7192977948644" />
                   <mssgle:CubicBezierSegment
-                    Point1="86.5416636771213,22.4561398700774"
-                    Point2="90.5416636771213,22.4561398700774"
-                    Point3="90.5416636771213,26.4561398700774" />
+                    Point1="28.374998463317,19.7192977948644"
+                    Point2="32.374998463317,19.7192977948644"
+                    Point3="32.374998463317,23.7192977948644" />
                   <mssgle:LineSegment
-                    End="90.5416636771213,37.4122797401549" />
+                    End="32.374998463317,31.9385955897287" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Llenado DimAirline">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="169.333333333334,42.6666666666667"
+          Id="Package\Llenado DimAirline\Llenado DimAirline"
+          TopLeft="126.874994328246,90.999999000838" />
+        <NodeLayout
+          Size="134,42.6666666666667"
+          Id="Package\Llenado DimAirline\CSV Airline"
+          TopLeft="101.874995445833,3.5527136788005E-15" />
+        <EdgeLayout
+          Id="Package\Llenado DimAirline.Paths[Flat File Source Output]"
+          TopLeft="168.874995445833,42.6666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42.6666655490799,48.3333323341713"
+              Start="0,0"
+              End="42.6666655490799,40.8333323341713">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.1666661670857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.1666661670857"
+                    Point2="0,24.1666661670857"
+                    Point3="4,24.1666661670857" />
+                  <mssgle:LineSegment
+                    End="38.6666655490799,24.1666661670857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38.6666655490799,24.1666661670857"
+                    Point2="42.6666655490799,24.1666661670857"
+                    Point3="42.6666655490799,28.1666661670857" />
+                  <mssgle:LineSegment
+                    End="42.6666655490799,40.8333323341713" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -404,7 +469,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Destino de ADO NET">
+    design-time-name="Package\Llenado DimAirline\Llenado DimAirline">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
